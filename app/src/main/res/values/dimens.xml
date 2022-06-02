@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="half_gap">4dp</dimen>
+    <dimen name="normal_gap">8dp</dimen>
+    <dimen name="double_gap">16dp</dimen>
+    <dimen name="triple_gap">24dp</dimen>
+    <dimen name="quadruple_gap">32dp</dimen>
+    <dimen name="quintuple_gap">40dp</dimen>
+
+    <dimen name="small_fontsize">8sp</dimen>
+    <dimen name="x10small_fontsize">10sp</dimen>
+    <dimen name="medium_fontsize">12sp</dimen>
+    <dimen name="normal_fontsize">14sp</dimen>
+    <dimen name="semilarge_fontsize">16sp</dimen>
+    <dimen name="large_fontsize">18sp</dimen>
+    <dimen name="xlarge_fontsize">20sp</dimen>
+    <dimen name="x22large_fontsize">22sp</dimen>
+    <dimen name="x24large_fontsize">24sp</dimen>
+    <dimen name="x36large_fontsize">36sp</dimen>
+    <dimen name="x48large_fontsize">48sp</dimen>
+
+</resources>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="app_name_dev" translatable="false">WeatherApp DEV</string>
+    <string name="app_name_pro" translatable="false">WeatherApp PRO</string>
+    <string name="city">City</string>
+    <string name="temp_value"> %1$s°%2$s</string>
+    <string name="current">Current</string>
+    <string name="max_min_temp">%1$s°/%2$s°</string>
+    <string name="feels_like">Feels Like %1$s</string>
+    <string name="empty_city_list">Empty Favorites</string>
+    <string name="selected_cities_count">%s Selected Cities</string>
+    <string name="city_not_found">City Not Found</string>
+    <string name="selected_cities">Selected Cities</string>
+    <string name="temp_type">%s°</string>
+</resources>

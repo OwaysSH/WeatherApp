@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appBarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:colorBackground"
+    android:theme="@style/AppTheme"
+    app:elevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/half_gap"
+        app:layout_scrollFlags="scroll|enterAlways">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/post_header"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingStart="@dimen/half_gap"
+            android:paddingEnd="@dimen/half_gap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/destination_selected_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/double_gap"
+                android:fontFamily="@font/cairo_medium"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textSize="@dimen/large_fontsize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/temp_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginEnd="@dimen/double_gap"
+                app:fontFamily="@font/cairo_bold"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/xlarge_fontsize"
+                tools:text="@string/temp_type"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fav_list_image_view"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fav_list_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/half_gap"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_like" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_header">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/search_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/normal_gap"
+                android:background="@drawable/un_selected_filter"
+                android:orientation="horizontal"
+                android:padding="@dimen/normal_gap"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/search_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:drawableStart="@drawable/ic_location_city"
+                    android:drawablePadding="@dimen/normal_gap"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:hint="@string/city"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textDirection="locale"
+                    android:textSize="@dimen/large_fontsize" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/search_btn"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_round_search"
+                    android:tint="@color/colorAccent" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+           <!-- <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sort_by_label"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Sort By:"
+                android:gravity="center_vertical"
+                android:layout_margin="@dimen/normal_gap"
+                android:fontFamily="@font/cairo_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/search_container"/>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/sort_by_city_container"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/normal_gap"
+                android:background="@drawable/filter_selection"
+                android:gravity="center"
+                android:state_selected="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sort_by_label"
+                app:layout_constraintTop_toBottomOf="@+id/search_container">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sort_by_city_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/normal_gap"
+                    android:fontFamily="@font/cairo_bold"
+                    android:gravity="center"
+                    android:text="@string/city"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/search_container" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/sort_by_country_container"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/normal_gap"
+                android:background="@drawable/filter_selection"
+                android:gravity="center"
+                android:state_selected="true"
+                android:text="@string/country"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sort_by_city_container"
+                app:layout_constraintTop_toBottomOf="@+id/search_container">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sort_by_country_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/normal_gap"
+                    android:fontFamily="@font/cairo_bold"
+                    android:gravity="center"
+                    android:text="@string/country"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/search_container" />
+            </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.appbar.AppBarLayout>

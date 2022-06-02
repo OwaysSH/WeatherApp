@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="app.oways.weather.ui.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteCitiesFragment"
+            app:destination="@id/favoriteCitiesFragment" />
+        <argument
+            android:name="selectedCity"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteCitiesFragment"
+        android:name="app.oways.weather.ui.fragment.FavoriteCitiesFragment"
+        android:label="fragment_favorite_cities"
+        tools:layout="@layout/fragment_favorite_cities" >
+        <action
+            android:id="@+id/action_favoriteCitiesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>

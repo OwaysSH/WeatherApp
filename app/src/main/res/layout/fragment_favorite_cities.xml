@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:context=".ui.fragment.FavoriteCitiesFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/count_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/double_gap"
+                android:fontFamily="@font/cairo_bold"
+                android:text="@string/selected_cities_count"
+                android:textSize="@dimen/xlarge_fontsize" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cities_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="10"
+                tools:listitem="@layout/city_list_item" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <include layout="@layout/empty_list_layout" />
+
+    </FrameLayout>
+
+    <include layout="@layout/custom_toolbar" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
